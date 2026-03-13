@@ -1,0 +1,12 @@
+2026-03-13 03:07:25,378 INFO     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-13 03:07:25,378 INFO     🍎  Mac Reminder Bridge  v2.1
+2026-03-13 03:07:25,378 INFO     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-13 03:07:25,378 INFO     Port     : 5000
+2026-03-13 03:07:25,378 INFO     Dry-run  : False
+2026-03-13 03:07:25,378 INFO     Log file : /Users/oliver/Library/Mobile Documents/com~apple~CloudDocs/AgentWorkspace/mac-reminder-bridge/reminder_bridge.log
+2026-03-13 03:07:25,783 INFO     ✅  Reminders permission OK
+2026-03-13 03:07:26,031 INFO     📋  Default list : '提醒事项'
+2026-03-13 03:07:26,276 INFO     📚  All lists    : 提醒事项, 提醒, 家庭
+2026-03-13 03:07:26,277 WARNING  ⚠️   Auth         : No BRIDGE_SECRET — anyone on allowed IPs can call this API
+2026-03-13 03:07:26,277 INFO     🛡️   IP allowlist  : 172.0.0.0/8, 127.0.0.1/32, ::1/128
+2026-03-13 03:07:26,277 INFO     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

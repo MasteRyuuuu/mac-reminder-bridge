@@ -18,6 +18,8 @@ Environment variables:
   BRIDGE_SECRET        Shared secret for X-Bridge-Secret header (recommended)
   BRIDGE_PORT          Port (default: 5000)
   BRIDGE_ALLOWED_IPS   Comma-separated IPs/CIDRs (default: 172.0.0.0/8,127.0.0.1,::1)
+                       Example: "1.2.3.4,192.168.1.0/24" for Cloud/Home mixed setups.
+                       Set to "0.0.0.0/0" to disable IP check (NOT recommended unless BRIDGE_SECRET is set).
   DRY_RUN              Set to "1" to log without writing to Reminders
 """
 
