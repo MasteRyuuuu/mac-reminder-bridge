@@ -3,9 +3,23 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
 
+> [!IMPORTANT]
+> **This entire repository, including all code and documentation, was generated 100% by Claude 4.6 Sonnet.**
+
 [**📖 中文说明文档 (Chinese README)**](./README_CN.md)
 
 A lightweight HTTP bridge that allows Docker containers (especially AI agents like OpenClaw) to manage your native **macOS Reminders.app** using simple REST API calls.
+
+## 🌟 Why run OpenClaw in Docker? (And why you need this bridge)
+
+Running OpenClaw (or any AI agent) inside Docker on macOS offers significant advantages over a native installation:
+
+1. **Security & Isolation**: AI agents frequently execute shell commands. Docker ensures that even a rogue script is trapped in a sandbox, unable to delete your personal `Documents` or access sensitive SSH keys directly.
+2. **Environment Consistency**: Avoid the "it works on my machine" headache. Docker provides a clean, predictable environment with all dependencies pre-installed, regardless of your macOS Python/Node.js version drift.
+3. **Dependency Management**: Native macOS environments can get "poluted" by conflicting libraries. Docker keeps your system clean.
+4. **The "Air Gap" Problem**: However, Docker's isolation prevents agents from talking to native macOS features like **Apple Reminders**, **Mail**, or **iMessage**. 
+
+**Mac Reminder Bridge** solved this final hurdle—keeping your agent safe in its sandbox while granting it a "controlled key" to your productivity ecosystem.
 
 ## 🌟 Why this exists?
 AI agents running inside Docker are isolated from your host's system APIs. This bridge creates a secure "wormhole," permitting your local AI assistant to set reminders, list tasks, and mark them as complete directly in your Apple ecosystem.
