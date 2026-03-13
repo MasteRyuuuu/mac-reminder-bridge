@@ -1,0 +1,70 @@
+# Mac Reminder Bridge 🔔
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform: macOS](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
+
+A lightweight HTTP bridge that allows Docker containers (especially AI agents like OpenClaw) to manage your native **macOS Reminders.app** using simple REST API calls.
+
+## 🌟 Why this exists?
+AI agents running inside Docker are isolated from your host's system APIs. This bridge creates a secure "wormhole," permitting your local AI assistant to set reminders, list tasks, and mark them as complete directly in your Apple ecosystem.
+
+## 🚀 Features
+- **Full CRUD Support**: Create, Read, Update, and Delete reminders.
+- **Natural Language Ready**: Designed to work seamlessly with AI agent tool-calling.
+- **Smart Formatting**: Supports due dates, priorities, notes, and specific lists.
+- **Security First**: 
+  - IP Address allowlisting.
+  - Optional Shared Secret authentication (`X-Bridge-Secret`).
+  - Protection against AppleScript injection.
+- **Reliable**: Uses robust AppleScript automation with locale-safe date parsing.
+
+## 📦 Installation & Setup
+
+### 1. Host Side (Your Mac)
+Clone the repo and install dependencies:
+```bash
+git clone https://github.com/your-username/mac-reminder-bridge.git
+cd mac-reminder-bridge
+pip install -r requirements.txt
+```
+
+Run the listener:
+```bash
+python3 listener.py
+```
+*Note: On first run, macOS will prompt you to grant terminal/IDE permission to access Reminders. Please allow this.*
+
+### 2. Client Side (Inside Docker/OpenClaw)
+If you are using OpenClaw, simply install the skill:
+```bash
+clawhub install mac-reminder-bridge
+```
+
+## 🛠 API Usage
+
+### Health Check
+```bash
+curl http://host.docker.internal:5000/health
+```
+
+### Create a Reminder
+```bash
+curl -X POST http://host.docker.internal:5000/add_reminder \
+     -H "Content-Type: application/json" \
+     -d '{
+       "task": "Pick up express package",
+       "due": "2026-03-14 18:00",
+       "priority": "high",
+       "notes": "Must arrive before 6 PM!"
+     }'
+```
+
+## ⚙️ Configuration (Environment Variables)
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `BRIDGE_SECRET` | Shared secret for authentication | (None) |
+| `BRIDGE_PORT` | Port to listen on | `5000` |
+| `BRIDGE_ALLOWED_IPS` | Comma-separated allowlist | `172.0.0.0/8,127.0.0.1` |
+
+## 📜 License
+MIT License. Feel free to use, modify, and distribute!
