@@ -3,6 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
 
+[**📖 中文说明文档 (Chinese README)**](./README_CN.md)
+
 A lightweight HTTP bridge that allows Docker containers (especially AI agents like OpenClaw) to manage your native **macOS Reminders.app** using simple REST API calls.
 
 ## 🌟 Why this exists?
